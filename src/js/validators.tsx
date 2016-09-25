@@ -10,40 +10,44 @@ namespace Validator {
 
 
   export abstract class Basic implements BasicInterface {
+    protected message = '';
     abstract validate(value: string)
     abstract getErrorMessage(value: string)
   }
 
 
   export class LettersOnly extends Basic {
+    protected message = 'Letter only, please';
     validate(value) {
       return lettersRegexp.test(value);
     }
 
     getErrorMessage(value) {
-      return 'Letter only, please';
+      return this.message;
     }
   }
 
 
   export class NumbersOnly extends Basic {
+    protected message = 'Number only, please';
     validate(value) {
       return numberRegexp.test(value);
     }
 
     getErrorMessage(value) {
-      return 'Number only, please';
+      return this.message;
     }
   }
 
 
   export class Required extends Basic {
+    protected message = 'This field is required';
     validate(value) {
-      return numberRegexp.test(value);
+      return (value) ? true : false;
     }
 
     getErrorMessage(value) {
-      return 'This field is required';
+      return this.message;
     }
   }
 
@@ -54,9 +58,6 @@ namespace Validator {
     'letters-only': LettersOnly
   }
 }
-
-
-
 
 
 export default Validator;

@@ -33,14 +33,12 @@ class Auto extends React.Component<Props, State> {
     console.log('onFormChange', evt);
   }
 
-  protected onFieldUpdate(valid) {
-    console.log('onFieldUpdate', valid);
+  protected onFieldUpdate(name:string, error:boolean, errorMessage:string) {
+    console.log('onFieldUpdate', error);
 
-    if (valid === false) {
-      this.state = {
-        valid: false
-      };
-    }
+    this.setState({
+       valid: (!error)
+    });
   }
   
   public render() {
