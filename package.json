@@ -1,0 +1,17 @@
+{
+  "name": "poc",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "webpack-dev-server --inline --display-error-details"
+  },
+  "devDependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "source-map-loader": "^0.1.5",
+    "ts-loader": "^0.8.2",
+    "typescript": "^2.0.3",
+    "webpack": "^1.13.2",
+    "webpack-bundle-tracker": "0.0.93",
+    "webpack-dev-server": "^1.16.1"
+  }
+}
