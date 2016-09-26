@@ -1,1 +1,1 @@
-{"status":"error","message":"(3,27): error TS2306: File '/Users/codyredmond/Work/poc/src/js/widgets/address.tsx' is not a module.","publicPath":"/bundles/"}
+{"status":"done","chunks":{"main":[{"name":"main.js","publicPath":"/bundles/main.js","path":"/main.js"},{"name":"main.js.map","publicPath":"/bundles/main.js.map","path":"/main.js.map"}]},"publicPath":"/bundles/"}

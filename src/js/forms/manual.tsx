@@ -83,7 +83,7 @@ export default class Manual extends React.Component<Props, State> {
 
         <Field.Select
           options={provinceChoices}
-          default="Select"
+          defaultText="Select"
           id="qualification_province_id"
           name="province"
           label="Province"

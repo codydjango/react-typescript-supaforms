@@ -36,7 +36,7 @@ export default class Auto extends React.Component<Props, State> {
 
 
   protected onFormChange(evt) {
-    console.log('onFormChange', evt);
+    // console.log('onFormChange', evt);
   }
 
 

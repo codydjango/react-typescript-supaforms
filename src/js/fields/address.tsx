@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Validator from '../validators/validators';
-import AddressWidget from '../widgets/address';
 
 
 interface Props {
