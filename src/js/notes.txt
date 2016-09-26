@@ -3,21 +3,7 @@ http://exploringjs.com/es6/ch_modules.html
 https://basarat.gitbooks.io/typescript/content/docs/styleguide/styleguide.html
 
 
-This is a great time to get started with React, ES2015, and Typescript.
-
-Typescript is a superset of Javascript. The "Typeing" is actually optional -- you don't
+Typescript is a superset of Javascript. The "Typing" is actually optional -- you don't
 need to use it if you don't want to. But most will, because the benefit far outweighs
 the cost. The tools and IDEs are completely battle-tested and make software development fun
 again.
-
-
-Cody notes to self:
-- typescript has "interface", similar to a class
-- public in constructor also enables creation of public properties of the same name.
-- public/private/protected modifiers; public by default
-- get/set function support
-- static properties for classes
-- abstract classes
-- function overloading, constructor overloading
-- interfaces
-- classes and interfaces play nicely together
