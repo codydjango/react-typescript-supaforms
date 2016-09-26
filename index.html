@@ -1,4 +1,4 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html>
 <head>
   <style>
@@ -7,7 +7,7 @@
          -moz-box-sizing: border-box;
               box-sizing: border-box;
     }
-  
+
     html, body {
       width: 100%;
       padding: 0px;
@@ -26,8 +26,30 @@
       margin: 0 0 1em 0;
     }
 
-    .field.error input {
-      border: 1px solid red;
+    .border {
+      padding: 8px 5px;
+      border-radius: 2px;
+      border: 1px solid #cecece
+    }
+
+    .border.valid {
+      border-color: #e2e2e2;
+    }
+
+    .border.focus {
+      border-color: #8c68a6;
+    }
+
+    .border.error {
+      border-color: red;
+    }
+
+    .border.error.focus {
+      border-color: #8c68a6;
+    }
+
+    .field.field_short .border, {
+      width: 80px;
     }
 
     label {
@@ -40,10 +62,26 @@
       width: 100%;
     }
 
-    p, span, label, input, button {
+    p, span, label, input, select, textarea, button {
       font-size: 17px;
       line-height: 23px;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus,
+    button:focus {
+      outline: none;
+    }
+
+    select {
+      width: 100%;
+      border: 0 !important;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-color: transparent;
     }
 
     span.error {
@@ -56,5 +94,5 @@
 <body>
   <div id="content"></div>
   <script type="text/javascript" src="bundles/main.js"></script>
-</body>  
-</html>  
+</body>
+</html>

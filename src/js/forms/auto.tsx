@@ -1,17 +1,18 @@
 import * as React from 'react';
-import Field from '../fields';
+import Field from '../fields/fields';
 
 
 interface Props {
 
 };
 
+
 interface State {
   valid: boolean
 };
 
 
-class Auto extends React.Component<Props, State> {
+export default class Auto extends React.Component<Props, State> {
   constructor(props) {
     super(props);
     console.log('form props', props);
@@ -21,48 +22,55 @@ class Auto extends React.Component<Props, State> {
     };
   }
 
+
   protected validate() {
     console.log('validate');
   }
 
+
   protected submit(evt) {
-    console.log('submitForm');
+    console.log('submitForm', evt);
+    evt.preventDefault();
+    evt.stopPropagation();
   }
+
 
   protected onFormChange(evt) {
     console.log('onFormChange', evt);
   }
 
+
   protected onFieldUpdate(name:string, error:boolean, errorMessage:string) {
-    console.log('onFieldUpdate', error);
+    // console.log('onFieldUpdate', error);
 
     this.setState({
        valid: (!error)
     });
   }
-  
+
+
   public render() {
+    console.log(Field.Text);
     return (
-      <form id="form_qualification_auto" onChange={this.onFormChange}>
-        <Field.TextInput 
-          id="unit" 
-          name="unit" 
-          label="Unit"
-          onUpdate={this.onFieldUpdate.bind(this)} 
-          validators="required|numbers-only" />
-        
-        <Field.TextInput 
-          id="address" 
-          name="address" 
-          label="Address" 
+      <form id="qualification_form_auto_id" onChange={this.onFormChange}>
+
+        <Field.Text
+          id="qualification_unit"
+          name="unit"
+          label="Unit number"
+          className="field_short"
+          onUpdate={this.onFieldUpdate.bind(this)}
+          validators="optional|numbers-only" />
+
+        <Field.Text
+          id="qualification_address"
+          name="address"
+          label="Address"
           onUpdate={this.onFieldUpdate.bind(this)}
           validators="required"/>
-        
+
         <button type="submit" onClick={this.submit}>Submit</button>
       </form>
     );
   }
 }
-
-
-export default Auto

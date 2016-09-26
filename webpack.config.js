@@ -1,12 +1,12 @@
-var path = require('path')  
-var webpack = require('webpack')  
+var path = require('path')
+var webpack = require('webpack')
 var BundleTracker = require('webpack-bundle-tracker')
 
 
 
-module.exports = {  
+module.exports = {
   context: __dirname,
-  entry: { main: ['./src/js/index.tsx'] },
+  entry: { main: ['./src/js/app.tsx'] },
   output: {
     path: path.resolve('./bundles'),
     publicPath: '/bundles/',  // Used by webpack-dev-server
