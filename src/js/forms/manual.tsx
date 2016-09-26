@@ -15,7 +15,6 @@ interface State {
 export default class Manual extends React.Component<Props, State> {
   constructor(props) {
     super(props);
-    console.log('form props', props);
 
     this.state = {
       valid: true
@@ -23,33 +22,31 @@ export default class Manual extends React.Component<Props, State> {
   }
 
 
+  protected submit(evt) {
+    evt.preventDefault();
+    evt.stopPropagation();
+    // to be implemented
+  }
+
+
+  protected validate() {
+    // to be implemented
+  }
+
+
   protected onFormChange(evt) {
-    console.log('onFormChange', evt);
+    // to be implemented
   }
 
 
   protected onFieldUpdate(name:string, error:boolean, errorMessage:string) {
-    // console.log('onFieldUpdate', error);
-
     this.setState({
        valid: (!error)
     });
   }
 
 
-  protected validate() {
-    console.log('validate');
-  }
-
-
-  protected submit(evt) {
-    console.log('submitForm');
-  }
-
-
   public render() {
-    let provinceChoices: Array<[string, string]> = [['bc', 'BC'], ['ab', 'AB']];
-
     return (
       <form id="qualification_form_manual_id" onChange={this.onFormChange}>
         <Field.Text
@@ -82,7 +79,7 @@ export default class Manual extends React.Component<Props, State> {
           validators="required"/>
 
         <Field.Select
-          options={provinceChoices}
+          options={[['bc', 'BC'], ['ab', 'AB']]}
           defaultText="Select"
           id="qualification_province_id"
           name="province"

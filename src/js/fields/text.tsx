@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {GenericBase, GenericBaseState, GenericBaseProps} from './base';
-import Validator from '../validators/validators';
 import TextWidget from '../widgets/text';
 
 
@@ -31,7 +30,7 @@ export default class Text extends GenericBase<Props, State> {
       value: value,
     };
 
-    this.setValidators(validators);
+    this.setValidators(validators.split('|'));
   }
 
 

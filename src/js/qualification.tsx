@@ -31,12 +31,24 @@ class AddressQualification extends React.Component<Props, State> {
   }
 
 
+  protected setForm(evt:React.FormEvent, name:string): void {
+    this.setState({
+      form: name
+    });
+  }
+
+
   public render() {
     let Form = mapping[this.state.form];
 
     return (
       <div className="address-qualification">
         <Form />
+        <hr />
+        <div className="actions">
+          <button onClick={ evt=> this.setForm(evt, 'auto')}>Autocomplete Form</button>
+          <button onClick={ evt=> this.setForm(evt, 'manual')}>Manual Form</button>
+        </div>
       </div>
     );
   }

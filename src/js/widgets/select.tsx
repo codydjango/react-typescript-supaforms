@@ -8,9 +8,9 @@ interface Props {
   defaultText: string,
   options: Array<[string, string]>,
   borderClasses: string,
-  onChange: (e:React.FormEvent) => void,
-  onBlur: (e:React.FormEvent) => void,
-  onFocus: (e:React.FormEvent) => void
+  onChange: (evt:React.FormEvent) => void,
+  onBlur: (evt:React.FormEvent) => void,
+  onFocus: (evt:React.FormEvent) => void
 };
 
 
@@ -29,9 +29,12 @@ export default class SelectWidget extends React.Component<Props, State> {
         <select
           id={this.props.id}
           name={this.props.name}
-          onChange={ e=> this.props.onChange(e)}
-          onBlur={ e=> this.props.onBlur(e)}
-          onFocus={ e=> this.props.onFocus(e)}>
+          autoCorrect="off"
+          autoCapitalize="off"
+          spellCheck={false}
+          onChange={ evt => this.props.onChange(evt)}
+          onBlur={ evt => this.props.onBlur(evt)}
+          onFocus={ evt => this.props.onFocus(evt)}>
           <option id="option_id" key="option" value=''>{this.props.defaultText}</option>
           {
             this.props.options.map(function(option, index, array) {

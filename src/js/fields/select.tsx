@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {GenericBase, GenericBaseState, GenericBaseProps} from './base';
-import Validator from '../validators/validators';
 import SelectWidget from '../widgets/select';
 
 
@@ -33,7 +32,7 @@ export default class Select extends GenericBase<Props, State> {
       value: value,
     };
 
-    this.setValidators(validators);
+    this.setValidators(validators.split('|'));
   }
 
 

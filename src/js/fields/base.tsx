@@ -10,7 +10,7 @@ export interface GenericBaseProps {
   error?: string,
   validators?: string,
   className?: string,
-  onUpdate: () => void
+  onUpdate: (name:string, value:string, error:boolean, errorMessage:string) => void
 };
 
 
@@ -33,14 +33,14 @@ export class GenericBase<Props extends GenericBaseProps, State extends GenericBa
 
 
   protected notify(): void {
-    // if (this.onUpdate) {
-    //   this.onUpdate(this.props.name, this.state.error, this.state.errorMessage);
-    // }
+    this.props.onUpdate(this.props.name,
+      this.state.value,
+      this.state.error,
+      this.state.errorMessage);
   }
 
 
   protected componentWillMount(): void {
-    console.log('componentWillMount');
   }
 
 
@@ -67,10 +67,10 @@ export class GenericBase<Props extends GenericBaseProps, State extends GenericBa
   }
 
 
-  protected setValidators(validatorsAsString:string): void {
+  protected setValidators(validatorNames:Array<string>): void {
     this.validators = [];
 
-    for (let validator of validatorsAsString.split('|')) {
+    for (let validator of validatorNames) {
       let instance = new Validator.map[validator];
       this.validators.push(instance);
     }

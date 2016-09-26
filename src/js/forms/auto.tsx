@@ -15,7 +15,6 @@ interface State {
 export default class Auto extends React.Component<Props, State> {
   constructor(props) {
     super(props);
-    console.log('form props', props);
 
     this.state = {
       valid: true
@@ -24,25 +23,23 @@ export default class Auto extends React.Component<Props, State> {
 
 
   protected validate() {
-    console.log('validate');
+    // to be implemented
   }
 
 
   protected submit(evt) {
-    console.log('submitForm', evt);
     evt.preventDefault();
     evt.stopPropagation();
+    // to be implemented
   }
 
 
   protected onFormChange(evt) {
-    // console.log('onFormChange', evt);
+    // to be implemented
   }
 
 
   protected onFieldUpdate(name:string, error:boolean, errorMessage:string) {
-    // console.log('onFieldUpdate', error);
-
     this.setState({
        valid: (!error)
     });
@@ -50,20 +47,25 @@ export default class Auto extends React.Component<Props, State> {
 
 
   public render() {
-    console.log(Field.Text);
     return (
       <form id="qualification_form_auto_id" onChange={this.onFormChange}>
+        <input type="hidden" name="latitude" id="qualification_latitude_id" />
+        <input type="hidden" name="longitude" id="qualification_longitude_id" />
+        <input type="hidden" name="street_number" id="qualification_street_number_id" />
+        <input type="hidden" name="street_name" id="qualification_street_name_id" />
+        <input type="hidden" name="city" id="qualification_city_id" />
+        <input type="hidden" name="province" id="qualification_province_id" />
 
         <Field.Text
-          id="qualification_unit"
+          id="qualification_unit_id"
           name="unit"
           label="Unit number"
           className="field_short"
           onUpdate={this.onFieldUpdate.bind(this)}
           validators="optional|numbers-only" />
 
-        <Field.Text
-          id="qualification_address"
+        <Field.Address
+          id="qualification_address_id"
           name="address"
           label="Address"
           onUpdate={this.onFieldUpdate.bind(this)}
