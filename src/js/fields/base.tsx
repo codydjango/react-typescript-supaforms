@@ -24,7 +24,6 @@ export interface GenericBaseState {
 
 export class GenericBase<Props extends GenericBaseProps, State extends GenericBaseState> extends React.Component<Props, State> {
   protected validators: Array<any>;
-  // protected onUpdate: (name:string, error:boolean, message:string) => void;
 
 
   constructor(props) {
@@ -91,7 +90,6 @@ export class GenericBase<Props extends GenericBaseProps, State extends GenericBa
 
 
   protected setError(error: string): void {
-    console.log('setError', error);
     this.state.errorMessage = error;
     this.state.errorClass = 'error';
     this.state.error = true;
@@ -99,7 +97,6 @@ export class GenericBase<Props extends GenericBaseProps, State extends GenericBa
 
 
   protected setValid(): void {
-    console.log('setValid');
     this.state.errorMessage = '';
     this.state.errorClass = 'valid';
     this.state.error = false;
