@@ -4,11 +4,11 @@ This is a simple proof-of-concept for React/Typescript.
 
 ##### It's easy and fun.
 
-1) npm install
-2) npm start
-3) profit
+1. npm install
+2. npm start
+3. profit
 
-I basically started building a forms library. I'm using ES2015 modules.
+I started building a forms library. I'm using ES2015 modules.
 
 I also made sure to try out:
   * interfaces (everywhere)
